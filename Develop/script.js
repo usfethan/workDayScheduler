@@ -4,7 +4,7 @@ $("#currentDay").html(todayDate);
 
 $(document).ready(function() {
     $(".saveBtn").on("click", function () {
-        var text = $(this).siblings(".decription").val();
+        var text = $(this).siblings(".text").val();
         var time = $(this).parent().attr("id");
 
         localStorage.setItem(time, text);
@@ -30,17 +30,17 @@ $(document).ready(function() {
             }
         })
     }
-    //getting item from local storage
-    $("#8hour.description").val(localStorage.getItem("8hour"));
-    $("#9hour.description").val(localStorage.getItem("9hour"));
-    $("#10hour.description").val(localStorage.getItem("10hour"));
-    $("#11hour.description").val(localStorage.getItem("11hour"));
-    $("#12hour.description").val(localStorage.getItem("12hour"));
-    $("#1hour.description").val(localStorage.getItem("1hour"));
-    $("#2hour.description").val(localStorage.getItem("2hour"));
-    $("#3hour.description").val(localStorage.getItem("3hour"));
-    $("#4hour.description").val(localStorage.getItem("4hour"));
-    $("#5hour.description").val(localStorage.getItem("5hour"));
+        //getting item from local storage
+        $("#8hour.text").val(localStorage.getItem("8hour"));
+        $("#9hour.text").val(localStorage.getItem("9hour"));
+        $("#10hour.text").val(localStorage.getItem("10hour"));
+        $("#11hour.text").val(localStorage.getItem("11hour"));
+        $("#12hour.text").val(localStorage.getItem("12hour"));
+        $("#1hour.text").val(localStorage.getItem("1hour"));
+        $("#2hour.text").val(localStorage.getItem("2hour"));
+        $("#3hour.text").val(localStorage.getItem("3hour"));
+        $("#4hour.text").val(localStorage.getItem("4hour"));
+        $("#5hour.text").val(localStorage.getItem("5hour"));
 
     timeTracker();
 })
