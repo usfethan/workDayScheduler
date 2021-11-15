@@ -1,5 +1,5 @@
 //today's date
-var todayDate = moment().format('ddd, MMM do YYYY');
+var todayDate = moment().format('ddd, MMM do YYYY,  h:mm:ss a');
 $("#currentDay").html(todayDate);
 
 $(document).ready(function() {
@@ -7,22 +7,38 @@ $(document).ready(function() {
         var text = $(this).siblings(".text").val();
         var time = $(this).parent().attr("id");
 
+        //saving text to localstorage
         localStorage.setItem(time, text);
     })
+        // Reset button
+        $(`<button class="=btn btn-success clear"></button>`)
+        .text("Clear Schedule")
+        .appendTo(".clear");
+
+    $(".clear").on("click", function (event) {
+        event.preventDefault();    
+        localStorage.clear();       // clear local storage
+        location.reload();          
+    });
+
+    
     function timeTracker () {
+        
         var timeNow = moment().hour();
 
         $(".time-block").each(function () {
             var blockTime = parseInt($(this).attr("id").split("hour")[1]);
-            // Checking time past - future - present
+            // Checking blocktime < currentime  
             if (blockTime < timeNow) {
                 $(this).removeClass("future");
                 $(this).removeClass("present");
                 $(this).addClass("past");
+            // Checking blocktime ==== currentime
             } else if (blockTime === timeNow) {
                 $(this).removeClass("past");
                 $(this).removeClass("future");
                 $(this).addClass("present");
+            //checking blocktime > currentime
             } else {
                 $(this).removeClass("present");
                 $(this).removeClass("past");
