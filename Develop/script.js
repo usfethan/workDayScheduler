@@ -11,10 +11,6 @@ $(document).ready(function() {
         localStorage.setItem(time, text);
     })
         // Reset button
-        $(`<button class="=btn btn-success clear"></button>`)
-        .text("Clear Schedule")
-        .appendTo(".clear");
-
     $(".clear").on("click", function (event) {
         event.preventDefault();    
         localStorage.clear();       // clear local storage

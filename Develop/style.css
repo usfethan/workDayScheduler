@@ -19,6 +19,15 @@ textarea {
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
+  
+}
+
+.btn-reset {
+  font-family: 'Open Sans', sans-serif;
+  box-shadow: 5px 5px 10px black;
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
 }
 
 .description {
