@@ -1,10 +1,11 @@
 //today's date
-var todayDate = moment().format('ddd, MMM do YYYY,  h:mm:ss a');
+var todayDate = moment().format("MMM Do YY");
 $("#currentDay").html(todayDate);
 
 $(document).ready(function() {
+
     $(".saveBtn").on("click", function () {
-        var text = $(this).siblings(".text").val();
+        var text = $(this).siblings(".description").val();
         var time = $(this).parent().attr("id");
 
         //saving text to localstorage
@@ -48,11 +49,11 @@ $(document).ready(function() {
         $("#10hour.text").val(localStorage.getItem("10hour"));
         $("#11hour.text").val(localStorage.getItem("11hour"));
         $("#12hour.text").val(localStorage.getItem("12hour"));
-        $("#1hour.text").val(localStorage.getItem("1hour"));
-        $("#2hour.text").val(localStorage.getItem("2hour"));
-        $("#3hour.text").val(localStorage.getItem("3hour"));
-        $("#4hour.text").val(localStorage.getItem("4hour"));
-        $("#5hour.text").val(localStorage.getItem("5hour"));
+        $("#13hour.text").val(localStorage.getItem("13hour"));
+        $("#14hour.text").val(localStorage.getItem("14hour"));
+        $("#15hour.text").val(localStorage.getItem("15hour"));
+        $("#16hour.text").val(localStorage.getItem("16hour"));
+        $("#17hour.text").val(localStorage.getItem("17hour"));
 
     timeTracker();
 })
